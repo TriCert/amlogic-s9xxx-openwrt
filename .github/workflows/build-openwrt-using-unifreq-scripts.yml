@@ -190,6 +190,7 @@ jobs:
           ln -sf /builder/opt ${{ github.workspace }}/opt
 
           # Query the latest release asset via GitHub API
+          # https://api.github.com/repos/${{ github.repository }}/releases?per_page=20 | \
           latest_version=$(curl -s \
               -H "Accept: application/vnd.github+json" \
               -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
